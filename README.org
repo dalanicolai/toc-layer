@@ -1,0 +1,63 @@
+#+TITLE: toc layer
+# Document tags are separated with "|" char
+# The example below contains 2 tags: "layer" and "web service"
+# Avaliable tags are listed in <spacemacs_root>/.ci/spacedoc-cfg.edn
+# under ":spacetools.spacedoc.config/valid-tags" section.
+#+TAGS: layer|web service
+
+# The maximum height of the logo should be 200 pixels.
+[[img/toc.png]]
+
+# TOC links should be GitHub style anchors.
+* Table of Contents                                        :TOC_4_gh:noexport:
+- [[#description][Description]]
+  - [[#features][Features:]]
+  - [[#usage][Usage]]
+- [[#install][Install]]
+- [[#key-bindings][Key bindings]]
+
+* Description
+Spacemacs layer providing toc-mode for easily creating, cleaning, adding and
+managing Table Of Contents (TOC) of pdf and djvu documents
+
+** Features:
+  - Extract Table of Contents from documents via text layer or via Tesseract OCR
+  - Auto detect indentation levels from leading spaces or by selecting level separater
+  - Quickly adjust pagenumbers while viewing the document
+  - Add Table of Contents to document
+
+** Usage
+See [[https://github.com/dalanicolai/toc-mode][toc-mode documentation]]
+
+* Install
+First clone this layer to you private directory
+
+#+BEGIN_SRC 
+  git clone https://github.com/dalanicolai/toc-layer.git ~/.emacs.d/private/toc
+#+END_SRC
+
+Then to use the layer, add it to your =~/.spacemacs=. You will need to
+add =toc= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+
+* Key bindings
+
+all-modes (i.e. all steps)
+| Key Binding | Description          |
+|-------------+----------------------|
+| ~C-c C-c~     | dispatch (next step) |
+toc-cleanup-mode
+| ~C-c C-j~ | toc-join-next-unnumbered-lines |
+toc-mode (tablist)
+| ~TAB~            | preview/jump-to-page                                                 |
+| ~right/left~     | toc-in/decrease-remaining                                            |
+| ~C-right/C-left~ | toc-in/decrease-remaining and view page                           |
+| ~S-right/S-left~ | in/decrease pagenumber current entry                                 |
+| ~C-down/C-up~    | scroll document other window (only when other buffer shows document) |
+| ~S-down/S-up~    | full page scroll document other window ( idem )                      |
+
+# Use GitHub URLs if you wish to link a Spacemacs documentation file or its heading.
+# Examples:
+# [[https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org#sessions]]
+# [[https://github.com/syl20bnr/spacemacs/blob/master/layers/%2Bfun/emoji/README.org][Link to Emoji layer README.org]]
+# If space-doc-mode is enabled, Spacemacs will open a local copy of the linked file.

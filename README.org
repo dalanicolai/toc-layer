@@ -13,7 +13,9 @@
 - [[#description][Description]]
   - [[#features][Features:]]
   - [[#usage][Usage]]
-- [[#install][Install]]
+- [[#installation][Installation]]
+  - [[#preparation][Preparation]]
+  - [[#install][Install]]
 - [[#key-bindings][Key bindings]]
 
 * Description
@@ -29,7 +31,12 @@ managing Table Of Contents (TOC) of pdf and djvu documents
 ** Usage
 See [[https://github.com/dalanicolai/toc-mode][toc-mode documentation]]
 
-* Install
+* Installation
+** Preparation
+This layer requires the [[https://github.com/dalanicolai/djvu-layer][djvu-layer]] (or simply the package [[http://elpa.gnu.org/packages/djvu.html][djvu.el]], although the
+layer is recommended) to be available. So first go there and install it.
+
+** Install
 First clone this layer to you private directory
 
 #+BEGIN_SRC 

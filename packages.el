@@ -31,7 +31,8 @@
 
 (defconst toc-packages
   '(
-    ;; djvu
+    pdf-tools
+    djvu
     (toc-mode :location (recipe
                              :fetcher github
                              :repo "dalanicolai/toc-mode"))
@@ -46,4 +47,15 @@
   (use-package toc-mode
     :defer t
     ))
+
+(defun toc/pre-init-pdf-tools ()
+  (spacemacs/set-leader-keys-for-major-mode 'pdf-view-mode "e" 'toc-extract-pages)
+  (spacemacs/set-leader-keys-for-major-mode 'pdf-view-mode "o" 'toc-extract-pages-ocr)
+    )
+
+(defun toc/pre-init-djvu ()
+  (spacemacs/set-leader-keys-for-major-mode 'djvu-read-mode "e" 'toc-extract-pages)
+  (spacemacs/set-leader-keys-for-major-mode 'djvu-read-mode "o" 'toc-extract-pages-ocr)
+  )
+
 ;;; packages.el ends here

@@ -46,6 +46,9 @@
 (defun toc/init-toc-mode ()
   (use-package toc-mode
     :defer t
+    :config
+    (evilified-state-evilify toc-tabular-mode toc-tabular-mode-map
+      "r"  'toc--replace-input)
     ))
 
 (defun toc/pre-init-pdf-tools ()
